@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>D3 Test</title>
+
+        <script type="text/javascript" src="d3/d3.v3.js"></script>
+    </head>
+
+    <body>
+
+    <p> This is first paragraph! </p>
+
+    <script type="text/javascript">
+
+        d3.select("body").append("p").text("Second paragraph appended!");
+        console.log(d3);
+
+        d3.select("p").text("Modified the first paragraph!");
+
+
+
+         /*
+        d3.select("body").append("p").text("New paragraph!");
+        d3.select("body").append("h1").text("H1 text!");
+        d3.select("body").append("h2").text("H2 text!");
+        d3.select("body").append("h3").text("H3 text!");
+        d3.select("body").append("p").text("Paragraph overwritten!");
+        d3.select("body").selectAll("p").data(dataset).enter().append("p").text("New paragraph!");
+        */
+
+     </script>
+
+ </body>
+</html>

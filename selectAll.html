@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>Test selectAll()</title>
+        <script type="text/javascript" src="d3/d3.v3.js"></script>
+    </head>
+
+    <body>
+
+    <!-- Delete all one-by-one and check the o/p (:) -->
+    <p> 1. para. </p>
+    <p> 2. para. </p>
+    <p> 3. para. </p>
+    <p> 4. para. </p>
+
+    <!-- d3 -->
+    <script type="text/javascript">
+
+        var mydata = [8, 3, 7];
+
+        d3.select("body")
+                .selectAll("p")
+                .data(mydata)
+                .enter()
+                .append("p")
+                .text("Newly appended!");
+     </script>
+
+ </body>
+</html>
