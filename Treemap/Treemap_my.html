@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title> Treemap </title>
+    <script type="text/javascript" src="../d3/d3.v3.js"></script>
+
+    <style>
+
+    </style>
+
+</head>
+
+
+<body>
+<div class="filter_options">
+    <input class="glyph_filter" name="Type" type="checkbox">a</input><br>
+    <input class="glyph_filter" name="Size" type="checkbox">b</input><br>
+    <input class="glyph_filter" name="Date" type="checkbox">c</input><br>
+    <input class="glyph_filter" name="Date" type="checkbox">c</input><br>
+
+</div>
+
+<form>
+    <input type="number" min="2" max="5" step="1" value="2" required>
+    <input type="submit" value="Depth">
+</form>
+
+     <p id="treemap">
+
+    <script>
+
+        var dot;
+        var rect;
+        var trremapRect;
+        /*
+         * Show hide function
+         */
+
+        d3.selectAll(".glyph_filter").on("change", function () {
+
+            var lVisibility = this.checked ? "visible" : "hidden";
+            console.log(this.name + lVisibility);
+            if (this.name == "Dot") {
+                dot.style("visibility", lVisibility); // path.style ...
+            } else if (this.name == "Type") {
+                rect.style("visibility", lVisibility); // path.style ...
+            }
+
+        });
+
+        /*
+         * Remove
+         * http://stackoverflow.com/questions/10784018/how-can-i-remove-or-replace-svg-content
+         *  Setting the id attribute when appending the svg element can also let d3 select so remove() later on this element by id.
+         */
+       /* var svg = d3.select("theParentElement").append("svg")
+                .attr("id","the_SVG_ID")
+                .attr("width"); // ....
+
+                d3.select("#the_SVG_ID").remove();
+          */
+
+        //
+
+        var jsondata = [
+                    {
+                        "name" : "/mnt",
+                        "depth" : 0,
+                        "x" : 10,
+                        "y" : 10,
+                        "w" : 800,
+                        "h" : 400
+                    },
+                    {
+                        "name" : "Middle East",
+                        "depth" : 1,
+                        "x" : 18,
+                        "y" : 18,
+                        "w" : 673.15623878740519,
+                        "h" : 384
+                    },
+                    {
+                        "name" : "Australasia",
+                        "depth" : 1,
+                        "x" : 691.15623878740519,
+                        "y" : 183.55523284503784,
+                        "w" : 110.84376121259476,
+                        "h" : 218.44476715496216
+                    },
+                    {
+                        "name" : "Europe",
+                        "depth" : 1,
+                        "x" : 691.15623878740519,
+                        "y" : 18,
+                        "w" : 110.84376121259476,
+                        "h" : 165.55523284503784
+                    },
+                    {
+                        "name" : "Abu Dhabi",
+                        "depth" : 2,
+                        "x" : 26,
+                        "y" : 26,
+                        "w" : 657.15623878740519,
+                        "h" : 368
+                    },
+                    {
+                        "name" : "Hunter Valley",
+                        "depth" : 2,
+                        "x" : 699.15623878740519,
+                        "y" : 191.55523284503784,
+                        "w" : 94.843761212594757,
+                        "h" : 202.44476715496216
+                    },
+                    {
+                        "name" : "Dartford",
+                        "depth" : 2,
+                        "x" : 699.15623878740519,
+                        "y" : 26,
+                        "w" : 94.843761212594757,
+                        "h" : 126.14061244392536
+                    },
+                    {
+                        "name" : "Cardiff",
+                        "depth" : 2,
+                        "x" : 707.03099494030471,
+                        "y" : 152.14061244392536,
+                        "w" : 86.969005059695249,
+                        "h" : 23.414620401112479
+                    },
+                    {
+                        "name" : "Cambridgeshire",
+                        "depth" : 2,
+                        "x" : 699.15623878740519,
+                        "y" : 152.14061244392536,
+                        "w" : 7.8747561528995131,
+                        "h" : 23.414620401112479
+                    }
+                ];
+
+
+        // Treemap Code
+
+        var color     = ["#005824","#238b45","#41ae76","#66c2a4","#99d8c9","#ccece6"];
+        var z_index   = 0;
+        var sizeText  = 6;
+        var depthMax  = 5; // starts from 0
+
+
+        var svg = d3.select("#treemap").append("svg")
+                .attr("width", 1000)
+                .attr("height", 1000);
+
+        svg.selectAll("g")
+                .data([jsondata]).enter().append("g")
+                .call(draw);
+
+        function draw(sel) {
+
+            sel.each(function(d) {
+
+                var thisSel = d3.select(this);
+                var sel = thisSel.selectAll("g")
+                        .data(d).enter();
+
+                sel.append("rect")
+                        .attr("x", function (d) { return d.x; })
+                        .attr("y", function (d) { return d.y; })
+                        //.attr("dy", "0.7em")
+                        .attr("width", function (d) { return d.w; })
+                        .attr("height", function (d) { return d.h; })
+                        .attr("name", function (d) { return d.name; })  // dbg
+                        .style("fill", function(d) { return d.depth > depthMax ? color[depthMax] : color[d.depth]; })
+                        .style("stroke", "white")
+                        .style("stroke-width", "0.3")
+                        .style("z-index", ++z_index);
+
+
+                // Labels
+                var text = sel.append("text")
+                        .attr("x", function(d) { return d.x; })
+                        .attr("y", function(d) { return d.y; })
+                        .attr("dy", "1.0em")
+                        .text(function(d) { return d.name; })   // add text
+                        .style("font-size", (sizeText + "px"))
+                        .style("font-family", "Verdana")
+                        .text(function(d) { return this.getBBox().width < d.w ? d.name : ".." ; })  // check if it is big or small, then modify it
+                        .style("fill", "white")
+                        .style("z-index", ++z_index);
+
+            });
+        } // function draw(sel)
+
+
+    </script>
+
+</body>
+</html>

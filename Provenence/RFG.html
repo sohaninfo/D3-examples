@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>RFG (Result Flow Graph)</title>
+		<script type="text/javascript" src="../d3/d3.v3.js"></script>
+
+		<style type="text/css">
+			/* No style rules here yet */		
+
+		</style>
+	</head>
+	<body>
+		<script type="text/javascript">
+
+			var bound = 1000;
+
+			var canvas = d3.select("body")
+					.append("svg")
+					.attr("height", bound)
+					.attr("width", bound);
+
+			var svgGroup = canvas.append("g")
+					.attr("transform", "translate(" + 100 + ", " + 100 + ")");
+
+
+			resultGlyph(svgGroup);
+
+
+			function resultGlyph(svg) {
+
+				var dataset = [1, 0, 1, 2, 0,
+					           2, 0, 1, 2, 2,
+				               1, 1, 0, 2, 0];
+				var size = 10;
+				var x_offset = 0,
+					y_offset = 0;
+
+				var barPadding = 1;
+
+				svg.append("rect")
+						.attr("width", size * 5)
+						.attr("height", size * 5)
+						.attr("x", function(d, i) {
+							var col = i % 5;
+							var x = (x_offset + col) * size;
+							return x;
+						})
+						.attr("y", function(d, i) {
+							var row = Math.floor(i / 5);
+							var y = (y_offset + row) * size;
+							return y;
+						})
+						.style("stroke", "white")
+						.style("stroke-width", "0.5px")
+						.style("fill", function(d, i) {
+							return gridColor(d);
+						});
+
+				var squares = svg.selectAll("rect")
+						.data(dataset).enter()
+						.append("rect")
+						.attr("width", size)
+						.attr("height", size)
+						.attr("x", function(d, i) {
+							var col = i % 5;
+							var x = (x_offset + col) * size;
+							return x;
+						})
+						.attr("y", function(d, i) {
+							var row = Math.floor(i / 5);
+							var y = (y_offset + row) * size;
+							return y;
+						})
+						.style("stroke", "white")
+						.style("stroke-width", "0.5px")
+						.style("fill", function(d, i) {
+							return gridColor(d);
+						});
+
+			}
+
+			/********************************************************************************************************
+			 * field name: key, type, size, date
+			 * value: deleted = 0 ,	added = 1, same = 2
+			 ********************************************************************************************************/
+
+			 function gridColor(i) {
+
+				switch(i) {
+					case 0:
+						return "#87CEEB"; // Damian
+						break;
+					case 1:
+						return "#FFBF00"; // Amber
+						break;
+					case 2:
+						return "#D3D3D3"; // Gray
+						break;
+					default:
+						// error
+				}
+
+				return color;
+			}
+
+			function highlightSelection() {
+
+
+			}
+
+
+
+		</script>
+	</body>
+</html>
