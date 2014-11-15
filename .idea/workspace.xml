@@ -2,17 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dbad6b58-b16b-40aa-8b36-458a44a6ef49" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Nested_Selection.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Provenence/QFG.js" />
-      <change type="DELETED" beforePath="C:\Users\saiful\DATA\Dropbox\DPhil-Research\ExperimentalCode\myd3\Glyph\Glyph.css" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\saiful\DATA\Dropbox\DPhil-Research\ExperimentalCode\myd3\Glyph\Glyph.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\saiful\DATA\Dropbox\DPhil-Research\ExperimentalCode\myd3\Glyph\Glyph.js" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\saiful\DATA\Dropbox\DPhil-Research\ExperimentalCode\myd3\QFG.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\saiful\DATA\Dropbox\DPhil-Research\ExperimentalCode\myd3\page04.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\saiful\DATA\Dropbox\DPhil-Research\ExperimentalCode\myd3\page05.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\saiful\DATA\Dropbox\DPhil-Research\ExperimentalCode\myd3\page06.html" afterPath="" />
-      <change type="DELETED" beforePath="C:\Users\saiful\DATA\Dropbox\DPhil-Research\ExperimentalCode\myd3\page07.html" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Treemap/QFG.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Provenence/QFG.html" afterPath="$PROJECT_DIR$/Provenence/QFG.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Provenence/QFG.js" afterPath="$PROJECT_DIR$/Provenence/QFG.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="myd3.iws" />
@@ -40,8 +32,8 @@
       <file leaf-file-name="QFG.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Provenence/QFG.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-16.0" vertical-offset="240" max-vertical-offset="4528">
-              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+            <state vertical-scroll-proportion="-7.3333335" vertical-offset="0" max-vertical-offset="448">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -50,8 +42,18 @@
       <file leaf-file-name="QFG.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Provenence/QFG.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="460">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.558952" vertical-offset="144" max-vertical-offset="4384">
+              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="QFG.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Treemap/QFG.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="400">
+              <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -60,7 +62,7 @@
       <file leaf-file-name="RFG.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Provenence/RFG.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-6.875" vertical-offset="571" max-vertical-offset="1968">
+            <state vertical-scroll-proportion="7.3333335" vertical-offset="912" max-vertical-offset="1968">
               <caret line="46" column="37" selection-start-line="44" selection-start-column="35" selection-end-line="46" selection-end-column="37" />
               <folding />
             </state>
@@ -336,10 +338,11 @@
     <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Messages" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32967034" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32863188" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16323732" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32863188" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5782967" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3282967" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2103929" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -349,7 +352,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -381,14 +383,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/Provenence/RFG.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1968">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gradientPie.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1026">
@@ -673,6 +667,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.5550528" vertical-offset="3904" max-vertical-offset="4768">
           <caret line="267" column="10" selection-start-line="267" selection-start-column="10" selection-end-line="267" selection-end-column="10" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -715,34 +710,42 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Provenence/RFG.html">
+    <entry file="file://$PROJECT_DIR$/Treemap/Treemap_my.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.875" vertical-offset="571" max-vertical-offset="1968">
-          <caret line="46" column="37" selection-start-line="44" selection-start-column="35" selection-end-line="46" selection-end-column="37" />
+        <state vertical-scroll-proportion="0.1597633" vertical-offset="1108" max-vertical-offset="3248">
+          <caret line="76" column="36" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Treemap/Treemap_my.html">
+    <entry file="file://$PROJECT_DIR$/Treemap/QFG.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.83870965" vertical-offset="2572" max-vertical-offset="3248">
-          <caret line="190" column="15" selection-start-line="190" selection-start-column="15" selection-end-line="190" selection-end-column="15" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="400">
+          <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Provenence/RFG.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="7.3333335" vertical-offset="912" max-vertical-offset="1968">
+          <caret line="46" column="37" selection-start-line="44" selection-start-column="35" selection-end-line="46" selection-end-column="37" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Provenence/QFG.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-16.0" vertical-offset="240" max-vertical-offset="4528">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+        <state vertical-scroll-proportion="-7.3333335" vertical-offset="0" max-vertical-offset="448">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Provenence/QFG.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="700">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.558952" vertical-offset="144" max-vertical-offset="4384">
+          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
           <folding />
         </state>
       </provider>
