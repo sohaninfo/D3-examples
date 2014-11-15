@@ -6,30 +6,30 @@
 
 var jsondata = [
     {
-        "name" : "apple",
+        "name" : ["apple"],
         "type" : {},
         "size" : {},
         "date" : {}
     },
     {
-        "name" : "apple",
+        "name" : ["apple"],
         "type" : [],
         "size" : {"from": "2MB", "to": "2GB"},
         "date" : {"from": "2014-01-01", "to": "2014-01-01"}
 
     },
     {
-        "name" : "apple computer",
+        "name" : ["apple", "computer"],
         "type" : [],
         "size" : {"from": "2MB", "to": "2GB"},
         "date" : {"from": "2014-11-01", "to": "2014-01-01"}
     },
     {
-        "name" : "apple computer",
+        "name" : ["apple", "computer"],
         "type" : ["docx", "pdf"],
         "size" : {},
         "date" : {"from": "2014-11-01", "to": "2014-01-01"}
-    },
+    }
    ];
 
 
