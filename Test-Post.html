@@ -1,293 +1,53 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-	<meta charset="UTF-8">
-	<title> Treemap </title>
-	<script type="text/javascript" src="d3/d3.v3.js"></script>
-</head>
+    <!DOCTYPE html>
+    <html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <title> Icon </title>
+        <script type="text/javascript" src="../lib/d3/d3.v3.js"></script>
+    </head>
 
 
-<body>
-<div class="filter_options">
-	<input class="glyph_filter" name="Type" id="a_button" type="checkbox">a</input><br>
-	<input class="glyph_filter" name="Size" type="checkbox">b</input><br>
-	<input class="glyph_filter" name="Dot" type="checkbox">c</input><br>
-</div>
+    <body>
 
-<form>
-	<input type="number" min="2" max="5" step="1" value="2" required>
-	<input type="submit" value="Depth">
-</form>
+    <p id="drawing">
 
-<p id="treemap">
+        <script>
 
-<script>
+            // data is not same as here, just to explain the requirement created it.
+            var lineData = [{"x": 55, "y": 65},
+                {"x": 63, "y": 57},
+                {"x": 157, "y": 57},
+                {"x": 165, "y": 65}];
 
-var dot;
-var rect;
-var trremapRect;
-/*
- * Show hide function
- */
+            var svg = d3.select("#drawing")
+                    .append("svg")
+                    .attr("height", 200)
+                    .attr("width", 200)
+                    .attr("transform", "translate(20, 20)");
 
-d3.selectAll(".glyph_filter").on("change", function () {
+            var lineFunction = d3.svg.line()
+                    .x(function (d) {
+                        return d.x;
+                    })
+                    .y(function (d) {
+                        return d.y;
+                    })
+                    .interpolate("linear");
 
-	var lVisibility = this.checked ? "visible" : "hidden";
-	console.log(this.name + lVisibility);
-	if (this.name == "Dot") {
-		dot.style("visibility", lVisibility); // path.style ...
-	} else if (this.name == "Type") {
-		rect.style("visibility", lVisibility); // path.style ...
-	}
+            svg.append("path")
+                    .attr("d", lineFunction(lineData))
+                    .style("stroke-width", 0.5)
+                    .style("stroke", "rgb(6,120,155)")
+                    .on("mouseover", function () {
+                        d3.select(this)
+                                .style("stroke", "orange");
+                    })
+                    .on("mouseout", function () {
+                        d3.select(this)
+                                .style("stroke", "rgb(6,120,155)");
+                    });
 
-});
+        </script>
 
-/*
- * Remove
- * http://stackoverflow.com/questions/10784018/how-can-i-remove-or-replace-svg-content
- *  Setting the id attribute when appending the svg element can also let d3 select so remove() later on this element by id.
- */
-/* var svg = d3.select("theParentElement").append("svg")
- .attr("id","the_SVG_ID")
- .attr("width"); // ....
-
- d3.select("#the_SVG_ID").remove();
- */
-
-//
-
-var jsondata = [{
-	"name" : "/mnt",
-	"x" : 10,
-	"y" : 10,
-	"w" : 500,
-	"h" : 500,
-	"children" : [
-		{
-			"name" : "Middle East",
-			"x" : 18,
-			"y" : 18,
-			"w" : 415.57094333304099,
-			"h" : 484,
-			"children" : [
-				{
-					"name" : "Abu Dhabi",
-					"x" : 26,
-					"y" : 26,
-					"w" : 399.57094333304099,
-					"h" : 468,
-					"children" : [
-						{
-							"name" : "Power",
-							"x" : 34,
-							"y" : 34,
-							"w" : 383.57094333304099,
-							"h" : 296.90540719364998
-						},
-						{
-							"name" : "Mining Natural Resourses",
-							"x" : 48.094545285803413,
-							"y" : 330.90540719364998,
-							"w" : 369.47639804723758,
-							"h" : 155.09459280635002
-						},
-						{
-							"name" : "Transport",
-							"x" : 33.999999999999993,
-							"y" : 330.90540719364998,
-							"w" : 14.094545285803422,
-							"h" : 155.09459280635002
-						}
-					]
-				}
-			]
-		},
-		{
-			"name" : "Australasia",
-			"x" : 433.57094333304099,
-			"y" : 226.66857473176645,
-			"w" : 68.429056666959013,
-			"h" : 275.33142526823355,
-			"children" : [
-				{
-					"name" : "Hunter Valley",
-					"x" : 433.57094333304099,
-					"y" : 226.66857473176645,
-					"w" : 68.429056666959013,
-					"h" : 275.33142526823355,
-					"children" : [
-						{
-							"name" : "Building",
-							"x" : 433.57094333304099,
-							"y" : 231.85816402780321,
-							"w" : 68.429056666959013,
-							"h" : 270.14183597219676
-						},
-						{
-							"name" : "Water Utilitis",
-							"x" : 433.57094333304099,
-							"y" : 226.66857473176645,
-							"w" : 68.429056666959013,
-							"h" : 5.1895892960367709
-						}
-					]
-				}
-			]
-		},
-		{
-			"name" : "Europe",
-			"x" : 433.57094333304099,
-			"y" : 18,
-			"w" : 68.429056666959013,
-			"h" : 208.66857473176645,
-			"children" : [
-				{
-					"name" : "Dartford",
-					"x" : 433.57094333304099,
-					"y" : 18,
-					"w" : 68.429056666959013,
-					"h" : 175.99906946578878,
-					"children" : [
-						{
-							"name" : "Water Utilitis",
-							"x" : 433.57094333304099,
-							"y" : 61.161278497610226,
-							"w" : 68.429056666959013,
-							"h" : 132.83779096817855
-						},
-						{
-							"name" : "Transport",
-							"x" : 433.57094333304099,
-							"y" : 18.000000000000011,
-							"w" : 68.429056666959013,
-							"h" : 43.161278497610219
-						}
-					]
-				},
-				{
-					"name" : "Cardiff",
-					"x" : 439.25252036178586,
-					"y" : 193.99906946578878,
-					"w" : 62.747479638214116,
-					"h" : 32.669505265977691,
-					"children" : [
-						{
-							"name" : "Building",
-							"x" : 447.80704577487722,
-							"y" : 193.99906946578878,
-							"w" : 54.192954225122733,
-							"h" : 32.669505265977691
-						},
-						{
-							"name" : "Transport",
-							"x" : 439.25252036178586,
-							"y" : 193.99906946578878,
-							"w" : 8.5545254130913779,
-							"h" : 32.669505265977691
-						}
-					]
-				},
-				{
-					"name" : "Cambridgeshire",
-					"x" : 433.57094333304099,
-					"y" : 193.99906946578878,
-					"w" : 5.6815770287448997,
-					"h" : 32.669505265977691,
-					"children" : [
-						{
-							"name" : "Building",
-							"x" : 433.57094333304099,
-							"y" : 193.99906946578878,
-							"w" : 5.6815770287448997,
-							"h" : 32.669505265977691
-						}
-					]
-				}
-			]
-		}
-	]
-},
-	{
-		"name" : "/mnt1",
-		"x" : 510,
-		"y" : 10,
-		"w" : 50,
-		"h" : 60
-	}
-];
-
-var svg = d3.select("#treemap").append("svg")
-		.attr("width", 1000)
-		.attr("height", 1000);
-
-var z_index = 0;
-
-console.log(svg.selectAll("g")
-		.data([jsondata]).enter().append("g")
-		.call(recurse));
-
-function recurse(sel) {
-	console.log("Called recurse(sel), sel:"); console.log(sel);
-
-	sel.each(function(d) {
-
-		console.log("Data/d:"); console.log(d);
-
-		var thisSel = d3.select(this);
-
-		var sel = thisSel.selectAll("rect")
-				.data(d).enter();
-
-		var children = sel.append("rect")
-				.attr("x", function (d) { return d.x; })
-				.attr("y", function (d) { return d.y; })
-				.attr("width", function (d) { return d.w; })
-				.attr("height", function (d) { return d.h; })
-				.attr("name", function (d) { return d.name; })  // dbg
-				.style("fill", "green")
-				.style("stroke", "white")
-				.style("stroke-width", "0.5")
-				.style("z-index", ++z_index);
-		// Labels
-		var size =10;
-		sel.append("text")
-				.attr("x", function(d) { return d.x; })
-				.attr("y", function(d) { return d.y; })
-				.attr("dy", ".7em")
-				.text(function(d) { console.log(d.name); return d.name; })  // dbg
-				.attr("name", function (d) { return d.name; })              // dbg
-				.style("font-family", "Verdana")
-				.style("font-size", size)
-				.style("overflow", "hidden")
-				.style("text-overflow", "ellipsis")
-				.style("fill", "white")
-				.style("max-width", function(d) { return d.width - size; })
-				.style("z-index", ++z_index);
-
-
-		//console.log("Children: "); console.log(children);
-		console.log(
-				children.filter(function(d) { console.log(d.children); return (d.children ? this : null); })
-						.style("height", function (d) { return 8; })
-						.datum(function(d) {return d.children})
-						.append("g")
-						.call(recurse)
-		);
-
-		for(var key in d.children) {
-			console.log("Children: "); console.log(d.children);
-		}
-
-		});
-
-
-
-
-
-}
-
-
-</script>
-
-</body>
-</html>
+    </body>
+    </html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title> Icon </title>
+    <script type="text/javascript" src="../lib/d3/d3.v3.js"></script>
+</head>
+
+
+<body>
+
+<p id="drawing">
+
+    <script>
+
+        // data is not same as here, just to explain the requirement created it.
+
+        var svg = d3.select("#drawing")
+                .append("svg")
+                .attr("height", 200)
+                .attr("width", 200)
+                .attr("transform", "translate(20, 20)");
+
+        svg.append("svg:image")
+                .attr('x', 0)
+                .attr('y', 0)
+                .attr('width', 20)
+                .attr('height', 24)
+                .attr("xlink:href", "icons/dateIcon.svg");
+
+    </script>
+
+</body>
+</html>
