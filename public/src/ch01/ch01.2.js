@@ -1,3 +1,19 @@
+	var dataset = [
+		[10, 200],
+		[20, 300],
+		[30, 350],
+		[40, 350],
+		[50, 490],
+		[60, 380],
+		[10, 250],
+		[10, 80],
+		[10, 90],
+		[10, 100],
+		[100, 200],
+		[300, 400],
+		[480, 480]
+	];
+
 function drawTable() {
 	var tbody = d3.select("body").append("table").append("body");
 	var trow = tbody.append("tr");
@@ -38,5 +54,18 @@ function drawCircle() {
   	line2.attr("stroke-width", 2)
 	.attr("stroke", "black");
 
+}
 
+function scatterPlot() {
+
+
+	var svg = d3.select("body").append("svg").attr("width", 500).attr("height", 500);
+
+	svg.selectAll("circle").data(dataset).enter().append("circle")
+	.attr("cx", function(d){ return d[0]})
+	.attr("cy", function(d){ return d[1]})
+	.attr("r", function(d){ return 5});
+
+
+	
 }
